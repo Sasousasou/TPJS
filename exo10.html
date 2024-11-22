@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date actuelle</title>
+  </head>
+  <body>
+    <h1>La date actuelle formatée</h1>
+
+    <p id="date"></p>
+
+    <script>
+      var dateActuelle = new Date();
+      var jour = dateActuelle.getDate();
+      var mois = dateActuelle.getMonth() + 1;
+      var annee = dateActuelle.getFullYear();
+
+      if (jour < 10) jour = "0" + jour;
+      if (mois < 10) mois = "0" + mois;
+
+      var dateFormatee = jour + "/" + mois + "/" + annee;
+      document.getElementById("date").innerText =
+        "Date actuelle : " + dateFormatee;
+    </script>
+  </body>
+</html>

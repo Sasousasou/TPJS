@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenue</title>
+    <script>
+      // Fonction pour afficher l'alerte de bienvenue
+      function demanderPrenom() {
+        var prenom = document.getElementById("prenom").value; // Récupère la valeur du champ de saisie
+        alert("Bienvenue, " + prenom + "!"); // Affiche le message dans l'alerte
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Page de bienvenue</h1>
+    <p>Entrez votre prénom :</p>
+
+    <!-- Champ de saisie pour le prénom -->
+    <input type="text" id="prenom" placeholder="Votre prénom ici" />
+
+    <!-- Bouton pour envoyer -->
+    <button onclick="demanderPrenom()">Envoyer</button>
+  </body>
+</html>

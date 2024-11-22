@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jour de la semaine</title>
+  </head>
+  <body>
+    <h2>Entrez un numéro pour connaître le jour de la semaine</h2>
+    <input type="number" id="numeroJour" min="1" max="7" placeholder="Entrez" />
+
+    <button onclick="afficherJour()">Afficher le jour</button>
+
+    <script>
+      function afficherJour() {
+        var numero = document.getElementById("numeroJour").value;
+        var joursSemaine = [
+          "Lundi",
+          "Mardi",
+          "Mercredi",
+          "Jeudi",
+          "Vendredi",
+          "Samedi",
+          "Dimanche",
+        ];
+
+        if (numero >= 1 && numero <= 7) {
+          alert(
+            "Le jour correspondant au numéro " +
+              numero +
+              " est : " +
+              joursSemaine[numero - 1]
+          );
+        } else {
+          alert("Veuillez entrer un numéro entre 1 et 7.");
+        }
+      }
+    </script>
+  </body>
+</html>

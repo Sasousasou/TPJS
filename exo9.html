@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire avec validation</title>
+  </head>
+  <body>
+    <h1>Formulaire de contact</h1>
+
+    <form id="contactForm" onsubmit="return validerFormulaire()">
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" />
+      <br /><br />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Entrez votre email"
+      />
+      <br /><br />
+
+      <button type="submit">Soumettre</button>
+    </form>
+
+    <p id="messageErreur" style="color: red"></p>
+
+    <script>
+      function validerFormulaire() {
+        var nom = document.getElementById("nom").value;
+        var email = document.getElementById("email").value;
+
+        if (nom === "" || email === "") {
+          document.getElementById("messageErreur").innerText =
+            "Tous les champs doivent être remplis.";
+          return false;
+        }
+        document.getElementById("messageErreur").innerText = "";
+        return true;
+      }
+    </script>
+  </body>
+</html>

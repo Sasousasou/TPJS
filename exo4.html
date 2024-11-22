@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table de multiplication</title>
+  </head>
+  <body>
+    <h1>Table de multiplication</h1>
+    <p>Entrez un nombre pour voir sa table de multiplication :</p>
+    <input type="number" id="nombre" placeholder="Entrez un nombre" />
+    <button onclick="afficherTable()">Afficher la table</button>
+
+    <div id="resultat"></div>
+
+    <script>
+      function afficherTable() {
+        var nombre = document.getElementById("nombre").value;
+        var resultatDiv = document.getElementById("resultat");
+
+        if (nombre) {
+          nombre = parseInt(nombre);
+          var resultatHTML =
+            "<h2>Table de multiplication de " + nombre + " :</h2>";
+
+          for (var i = 1; i <= 10; i++) {
+            resultatHTML +=
+              "<p>" + nombre + " x " + i + " = " + nombre * i + "</p>";
+          }
+
+          resultatDiv.innerHTML = resultatHTML;
+        } else {
+          resultatDiv.innerHTML = "<p>Veuillez entrer un nombre valide.</p>";
+        }
+      }
+    </script>
+  </body>
+</html>

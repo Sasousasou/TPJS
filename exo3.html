@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Âge</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+        .major {
+            color: green;
+        }
+        .minor {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vérification de votre âge</h1>
+    <p>Entrez votre âge :</p>
+    <input type="number" id="age" placeholder="Votre âge" min="0">
+    <button onclick="checkAge()">Vérifier</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkAge() {
+            const age = document.getElementById('age').value;
+            const resultDiv = document.getElementById('result');
+            const body = document.body;
+
+            if (age === "" || isNaN(age) || age < 0) {
+                resultDiv.textContent = "Veuillez entrer un âge valide.";
+                resultDiv.classList.remove('major', 'minor');
+                body.style.backgroundColor = "white"; 
+            } else {
+                if (age >= 18) {
+                    resultDiv.textContent = "Vous êtes majeur.";
+                    resultDiv.classList.add('major');
+                    resultDiv.classList.remove('minor');
+                    body.style.backgroundColor = "lightgreen"; 
+                } else {
+                    resultDiv.textContent = "Vous êtes mineur.";
+                    resultDiv.classList.add('minor');
+                    resultDiv.classList.remove('major');
+                    body.style.backgroundColor = "lightcoral"; 
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+</html>

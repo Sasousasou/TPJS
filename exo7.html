@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcul de l'aire d'un cercle</title>
+  </head>
+  <body>
+    <h1>Calcul de l'aire d'un cercle</h1>
+
+    <p>Entrez le rayon du cercle :</p>
+
+    <input type="number" id="rayon" placeholder="Entrez le rayon" />
+
+    <button onclick="calculerAire()">Calculer l'aire</button>
+
+    <p id="resultat"></p>
+
+    <script>
+      function calculerAire() {
+        var rayon = document.getElementById("rayon").value;
+
+        if (rayon > 0) {
+          var aire = Math.PI * rayon * rayon;
+
+          document.getElementById("resultat").innerText =
+            "L'aire du cercle est : " + aire.toFixed(2) + " unités carrées.";
+        } else {
+          document.getElementById("resultat").innerText =
+            "Veuillez entrer un rayon valide supérieur à 0.";
+        }
+      }
+    </script>
+  </body>
+</html>
